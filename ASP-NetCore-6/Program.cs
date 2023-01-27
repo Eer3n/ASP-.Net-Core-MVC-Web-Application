@@ -1,8 +1,11 @@
+
+using ASP_NetCore_6.Config;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<ApplicationDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,4 +29,4 @@ app.MapControllerRoute(
 
 app.Run();
 
-// roating, authorization, mid
+// roating, authorization, mid 
