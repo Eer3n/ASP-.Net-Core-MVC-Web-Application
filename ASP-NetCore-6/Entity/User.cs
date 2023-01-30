@@ -13,5 +13,8 @@ public class User
    public string surname { get; set; }
    public string password { get; set; }
    public string country { get; set; }
-   public Gender Gender { get; set; }
+   public string email { get; set; }
+   public Gender gender { get; set; }
+   
+   public string username { get; set; }
 }

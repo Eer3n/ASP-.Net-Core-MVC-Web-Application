@@ -1,3 +1,5 @@
+using ASP_NetCore_6.Converter;
+using ASP_NetCore_6.Dto;
 using ASP_NetCore_6.Entity;
 using ASP_NetCore_6.Repository;
 using Quickwire.Attributes;
@@ -10,15 +12,30 @@ public class UserService
     private UserRepository _userRepository { get; init; }
 
     public User? findbyId(long Id) => _userRepository.findbyId(Id);
-
-    public User CreateUser(User user) => _userRepository.persist(user);
-
-    public void characterCheck(User user)
+    
+    public User createFromDto(UserDto userDto)
     {
-        if (user.password.Length >= 12 || user.password.Length <= 35)
+        var user = UserDtoConverter.convert(userDto);
+        if (!validatePassword(user.password, userDto.rePassword)||!isEmailValid(userDto.email))
         {
-            _userRepository.persist(user);
+            return null;
+        }
+        validateUserName(user);
+        return user;
+    }
+
+    private bool validatePassword(string password,string rePassword) =>
+        (password.Length >= 12 && password.Length <= 35) && (password == rePassword);
+    
+
+    private void validateUserName(User user)
+    {
+        if (user.username == null)
+        {
+            user.username = "HelloSunShine!";
         }
     }
+
+    private bool isEmailValid(string email) => _userRepository.findbyEmail(email) != null;
 
 }

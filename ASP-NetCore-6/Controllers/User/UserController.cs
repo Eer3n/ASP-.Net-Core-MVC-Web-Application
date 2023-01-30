@@ -1,5 +1,4 @@
-using ASP_NetCore_6.Entity;
-using ASP_NetCore_6.Enum;
+using ASP_NetCore_6.Dto;
 using ASP_NetCore_6.Service;
 using Microsoft.AspNetCore.Mvc;
 using Quickwire.Attributes;
@@ -15,17 +14,10 @@ public class UserController : Controller
     public IActionResult Register() => View();
 
     [HttpPost, Route("/register")]
-    public void RegisterNewUser(User user)
+    public void RegisterNewUser(UserDto userDto)
     {
-        user.country = "TC";
-        user.Gender = Gender.FEMALE;
-        user.surname = "Eren";
-        _userService.characterCheck(user: user);
-        _userService.CreateUser(user: user);
+        var user = _userService.createFromDto(userDto);
     }
-
 }
 
-// HOMEWORK
-// it will be written in User service. A method will be written this page, user passwordss character size will be arranged min 20 max 35 if not will it fix return false
-// register  
+
