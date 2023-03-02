@@ -12,6 +12,9 @@ public class UserService
     private UserRepository _userRepository { get; init; }
 
     public User? findbyId(long Id) => _userRepository.findbyId(Id);
+
+    public User? findByEmailAndPassword(string email, string password) =>
+        _userRepository.findByEmailAndPassword(email, password);
     
     public User createFromDto(UserDto userDto)
     {
@@ -39,3 +42,5 @@ public class UserService
     private bool isEmailValid(string email) => _userRepository.findbyEmail(email) != null;
 
 }
+
+// add endpoint  and make a login page

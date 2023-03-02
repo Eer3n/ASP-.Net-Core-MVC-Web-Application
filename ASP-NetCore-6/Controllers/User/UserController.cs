@@ -18,6 +18,22 @@ public class UserController : Controller
     {
         var user = _userService.createFromDto(userDto);
     }
+
+    [HttpGet, Route(("/login"))]
+    public IActionResult Login() => View();
+    
+    [HttpPost, Route("/login")]
+    public IActionResult RegisterNewUsers(UserDto userDto)
+    {
+        var user = _userService.findByEmailAndPassword(userDto.email, userDto.password);
+        if (user == null)
+        {
+            //error mesg
+        }
+        HttpContext.Session.SetString("myUsername",user.username);
+        
+        return Redirect("/");
+    }
 }
 
 

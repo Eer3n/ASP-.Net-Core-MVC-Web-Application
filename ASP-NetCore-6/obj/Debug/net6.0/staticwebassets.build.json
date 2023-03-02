@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2fWag5Xw1jSPHYXoxM0ZndtDLwzI1XtFABdTI7FcP9w=",
+  "Hash": "8sB4tCjJccMcdORA+qi0Uzuua7CHf/9ZirbDu858i/I=",
   "Source": "ASP-NetCore-6",
   "BasePath": "_content/ASP-NetCore-6",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/eren/Documents/GitHub/ASP-.Net-Core-MVC-Web-Application/ASP-NetCore-6/obj/Debug/net6.0/scopedcss/projectbundle/ASP-NetCore-6.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/eren/Documents/GitHub/ASP-.Net-Core-MVC-Web-Application/ASP-NetCore-6/wwwroot/css/Login.css",
+      "SourceId": "ASP-NetCore-6",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/eren/Documents/GitHub/ASP-.Net-Core-MVC-Web-Application/ASP-NetCore-6/wwwroot/",
+      "BasePath": "_content/ASP-NetCore-6",
+      "RelativePath": "css/Login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/Login.css"
     },
     {
       "Identity": "/Users/eren/Documents/GitHub/ASP-.Net-Core-MVC-Web-Application/ASP-NetCore-6/wwwroot/css/site.css",

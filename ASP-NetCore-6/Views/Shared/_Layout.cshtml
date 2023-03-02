@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var sessionUsername = Context.Session.GetString("myUsername");
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -7,6 +10,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/ASP_NetCore_6.styles.css" asp-append-version="true"/>
+
 </head>
 <body>
 <header>
@@ -27,7 +31,10 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
-                        </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
